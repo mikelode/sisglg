@@ -1,0 +1,258 @@
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../.res/icons/muni_yarabamba_icon.png"/>
+    <title>Municipalidad Distrital de Yarabamba - Sistema de Gestión Documentaria</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!--meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
+
+    <!-- Hojas de Estilo CSS -->
+    <!-- RIBBON MENU -->
+    <link href="../Ribbon/ribbon/ribbon.css" rel="stylesheet" type="text/css" />
+    <link href="../Ribbon/soft_button.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Bootstrap/css/bootstrap-theme.css">
+    <!--<link rel="stylesheet" href="../StarsRating/css/star-rating.min.css" media="all" type="text/css">
+    <link rel="stylesheet" href="../Select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../Bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../Bootstrap-editable/css/bootstrap-editable.css">
+    <link rel="stylesheet" href="../DataTables/datatables.min.css">-->
+
+    <!-- General -->
+    <!--<link rel="stylesheet" href="../.css/class.css">-->
+    <!--<link rel="stylesheet" href="../.css/symva.css">-->
+    <link rel="stylesheet" href="../.css/almacen.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="../.js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="../.js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../Ribbon/ribbon/ribbon.js"></script>
+    <script type="text/javascript" src="../Ribbon/ribbon/jquery.tooltip.min.js"></script>
+    <script type="text/javascript" src="../Moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../Moment/locale/es.js"></script>
+    <script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../StarsRating/js/star-rating.min.js"></script>
+    <script type="text/javascript" src="../StarsRating/js/locales/es.js"></script>
+    <script type="text/javascript" src="../Select2/dist/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="../Bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../Bootstrap-editable/js/bootstrap-editable.min.js"></script>
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript" src="../.js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ribbon').ribbon();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="alm-wrapper">
+        <div id="ribbon" style="height: inherit">
+            <span class="ribbon-window-title">
+                Bienvenido: <span id="user"></span>
+                <span class="pull-right" id="timestamp"></span>
+            </span>
+            <div class="ribbon-tab file" id="file-tab">
+                <span class="ribbon-title">Archivo</span>
+                <div class="ribbon-backstage">
+                    Nada por aqui.<br/><br/>
+
+                    <div class="button big">
+                        <img src="../Ribbon/icons/normal/open-page.png" alt="Open" />
+                        <span class="label">Abrir</span>
+                        <span class="desc"></span>
+                    </div><br/>
+                    <div class="button big">
+                        <img src="../Ribbon/icons/normal/save-page.png" alt="Save" />
+                        <span class="label">Guardar</span>
+                        <span class="desc"></span>
+                    </div>
+                </div>
+
+                <div id="header" class="header">
+                    <br>
+                    <div class="head1">
+                        <img src="../.res/images/muni_yarabamba_logo2.png">
+                    </div>
+                    <div class="head2">
+                        <div id="cliente"></div>
+                        <div id="sistema"></div>
+                    </div>
+                    <div id="headofi" style="float: left; width: 47%; text-align: center;"></div>
+                    <div id="head3" class="head3">
+                        <div id="close"></div>
+                    </div>
+                    <br>
+
+
+                    <div id="modules" class="modules">
+                    </div>
+
+                    <div id="footer" class="footer">
+                        <br>
+                        <div id="foot1"></div>
+                        <div id="foot2"></div>
+                        <div id="foot3"></div>
+                        <div id="foot4"></div>
+                        <div id="foot5"></div>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="ribbon-tab" id="next-tab">
+                <span class="ribbon-title">General</span>
+                <div class="ribbon-section">
+                    <span class="section-title">Grl</span>
+
+                    <div class="ribbon-button ribbon-button-large"  id="btnMainLogAnio" >
+                        <span class="button-title">Año de <br/>Ejecucion</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconAnio.png" />
+                    </div>
+
+                    <div class="ribbon-button ribbon-button-large " id="btnMainLogPass">
+                        <span class="button-title">Cambiar<br/>Contraseña</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconPass.png" />
+                    </div>
+                </div>
+                <div class="ribbon-section">
+                    <span class="section-title">Usuarios</span>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogRUC" >
+                        <span class="button-title">Registro de  <br>Proveedores</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconProv.png" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogPrice">
+                        <span class="button-title">Precios<br>Referenciales</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconPrice.png" />
+                    </div>
+                </div>
+
+                <div class="ribbon-section">
+                    <span class="section-title">Reportes</span>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogReqSg">
+                        <span class="button-title">Seguimiento <br>de Requermiento</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconSeg.png" width="35px" height="35px"  />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogRpt">
+                        <span class="button-title">Reportes <br>General</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconRpt.png" width="35px" height="35px"  />
+                    </div>
+                </div>
+
+                <div class="ribbon-section">
+                    <span class="section-title">Salir</span>
+                        <div class="ribbon-button ribbon-button-large" id="btnMainClose">
+                            <span class="button-title">SALIR</span>
+                            <a id="CloseSys" href="javascript:void(0)" onclick="salir()" >
+                                <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/close.png" />
+                            </a>
+                        </div>
+                </div>
+            </div>
+            <div class="ribbon-tab" id="tabLogistica">
+
+                <span class="ribbon-title">Logistica</span>
+                <div class="ribbon-section">
+                    <span class="section-title">Rqr - Ctz - CC - OC - OS </span>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogReq">
+                        <span class="button-title">Solicitud de <br>Requerimientos</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconRq.png" width="32px" height="32px" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogCtz">
+                        <span class="button-title">Solicitud de <br/>Cotizacion </span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconCtz.png" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogCC">
+                        <span class="button-title">Cuadro <br/>Comparativo</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconCdr.png" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogOC">
+                        <span class="button-title">Orden de<br/>Compra</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconOC.png" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogOS">
+                        <span class="button-title">Orden de<br/>Servicio</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconOS.png" />
+                    </div>
+                </div>
+
+                <div class="ribbon-section">
+                    <span class="section-title">Salir</span>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainClose">
+                        <span class="button-title">SALIR</span>
+                        <a id="CloseSys" href="javascript:void(0)" onclick="salir()" >
+                            <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/close.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="ribbon-tab" id="tabPresupuesto">
+                <span class="ribbon-title">Presupuesto</span>
+
+                <div class="ribbon-section">
+                    <span class="section-title">Ppto</span>
+
+                    <div class="ribbon-button ribbon-button-large">
+                        <span class="button-title">Rubro </span>
+                        <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/delete-table.png" />
+                    </div>
+
+                    <div class="ribbon-button ribbon-button-large">
+                        <span class="button-title">Clasificadores <br> de Gasto </span>
+                        <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/delete-table.png" />
+                    </div>
+
+                    <div class="ribbon-button ribbon-button-large">
+                        <span class="button-title">Certificacion <br/>Ejecucion</span>
+                        <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/delete-table.png" />
+                    </div>
+
+                    <div class="ribbon-button ribbon-button-large " id="other-btn-2">
+                        <span class="button-title">Secuencias<br/>Funcionales</span>
+                        <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/delete-table.png" />
+                    </div>
+                </div>
+
+                <div class="ribbon-section">
+                    <div class="ribbon-button ribbon-button-large " id="other-btn-3">
+                        <span class="button-title"> Sincronizar <br>SIAF </span>
+                        <img class="ribbon-icon ribbon-normal" src="../Ribbon/icons/normal/delete-table.png" />
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="ribbon-tab" id="tabSistema">
+                <span class="ribbon-title">Sistema</span>
+                <div class="ribbon-section">
+                    <span class="section-title">Registros</span>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogCat">
+                        <span class="button-title">Catalogo de <br>Bienes y Servicios</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconCat.png" />
+                    </div>
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogPers">
+                        <span class="button-title">Registro de  <br>Personal</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconPer.png" />
+                    </div>
+
+                    <div class="ribbon-button ribbon-button-large" id="btnMainLogUsr">
+                        <span class="button-title">Registro de  <br>Cuentas de Usuario</span>
+                        <img class="ribbon-icon ribbon-normal" src="../.res/images/iconUsr.png"  width="30px" height="30px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alm-content-wrapper">
+        </div>
+    </div>
+</body>
+</html>
